@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<% include ../../layouts/backend/header.ejs %>
+<body>
+	<div class="col-sm-12">
+		<a href="../admin/user/create"><button type="button" class="btn btn-success btn-sm"> Create</button></a>
+		<table class="table table-bordered">
+			<thead>
+				<tr>
+					<th>STT</th>
+					<th>Name</th>
+					<th>Email</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% var stt = 0 %>
+				<% users.forEach(function(item, index){ %>
+				<% stt++ %>
+					<tr>
+						<td><%= stt %></td>
+						<td><%= users[index]['name'] %></td>
+						<td><%= users[index]['email'] %></td>
+						<td>
+							<button type="button" class="btn btn-info btn-sm">Edit</button>
+						</td>
+					</tr>	
+				<% }); %>
+			</tbody>
+		</table>
+	</div>
+</body>
+<script>
+	$(document).ready(function(){
+		
+	});
+</script>
+</html>
