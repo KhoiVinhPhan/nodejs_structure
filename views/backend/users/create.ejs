@@ -2,15 +2,15 @@
 <html>
 <% include ../../layouts/backend/header.ejs %>
 <body>
-    <form action="" method="post">
+    <form action="../user/store" method="post">
         <div class="col-sm-12">
             <div class="form-group">
                 <label>Name</label>
-                <input type="text" name="name" class="form-control">
+                <input type="text" name="txtName" class="form-control">
             </div>
             <div class="form-group">
                 <label>Email</label>
-                <input type="email" name="email" class="form-control">
+                <input type="email" name="txtEmail" class="form-control">
             </div>
             <button type="submit" class="btn btn-success btn-sm">Create</button>
         </div>

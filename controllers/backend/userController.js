@@ -1,6 +1,7 @@
 module.exports = {
     index : index,
     create : create,
+    store : store,
 };
 //Config database: mysql
 var mysql = require("mysql");
@@ -23,4 +24,13 @@ function index(req, res){
 // Create user
 function create(req, res){
     res.render("./backend/users/create.ejs");
+}
+
+function store(req, res){
+    var name = req.body.txtName;
+    var email = req.body.txtEmail;
+    con.query("INSERT INTO user(name, email) VALUES('"+name+"', '"+email+"')", function(error, results, fields){
+        if (error) throw error;
+        res.redirect("../user");
+    });
 }
