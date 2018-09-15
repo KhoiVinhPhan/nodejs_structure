@@ -10,5 +10,7 @@ var urlencodedParser = bodyParser.urlencoded({ extended: false });
 router.get("/user", userController.index);
 router.get("/user/create", userController.create);
 router.post("/user/store", urlencodedParser, userController.store);
+router.get("/user/:id/edit", userController.edit);
+router.post("/user/update", urlencodedParser, userController.update);
 
 module.exports = router;

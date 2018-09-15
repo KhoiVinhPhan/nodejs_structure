@@ -22,7 +22,7 @@
 						<td><%= users[index]['name'] %></td>
 						<td><%= users[index]['email'] %></td>
 						<td>
-							<button type="button" class="btn btn-info btn-sm">Edit</button>
+							<a href="../admin/user/<%= users[index]['id'] %>/edit" title=""><button type="button" class="btn btn-info btn-sm">Edit</button></a>
 						</td>
 					</tr>	
 				<% }); %>
