@@ -4,6 +4,7 @@ module.exports = {
     store : store,
     edit : edit,
     update : update,
+    deleted : deleted
 };
 //Config database: mysql
 var mysql = require("mysql");
@@ -53,5 +54,14 @@ function update(req, res){
     con.query("UPDATE user SET name='"+name+"', email='"+email+"' WHERE id='"+id+"'", function(error, results, fields){
         if (error) throw error;
         res.redirect("../user");
+    });
+}
+
+//Delete user
+function deleted(req, res){
+    var id = req.params.id;
+    con.query("DELETE FROM user WHERE id = '"+id+"'", function(error, results, fields){
+        if (error) throw error;
+        res.redirect("/admin/user");
     });
 }

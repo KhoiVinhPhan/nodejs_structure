@@ -23,6 +23,7 @@
 						<td><%= users[index]['email'] %></td>
 						<td>
 							<a href="../admin/user/<%= users[index]['id'] %>/edit" title=""><button type="button" class="btn btn-info btn-sm">Edit</button></a>
+							<a href="../admin/user/<%= users[index]['id'] %>/deleted" title=""><button type="button" class="btn btn-danger btn-sm">Delete</button></a>
 						</td>
 					</tr>	
 				<% }); %>

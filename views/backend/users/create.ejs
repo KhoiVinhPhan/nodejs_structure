@@ -2,7 +2,7 @@
 <html>
 <% include ../../layouts/backend/header.ejs %>
 <body>
-    <form action="../user/store" method="post">
+    <form action="../user/store" method="post" id="formCreateUser">
         <div class="col-sm-12">
             <div class="form-group">
                 <label>Name</label>
@@ -18,7 +18,17 @@
 </body>
 <script>
     $(document).ready(function(){
-        
+        $('#formCreateUser').validate({
+            rules: {
+                txtName: {
+                    required: true,
+                },
+                txtEmail: {
+                    required: true,
+                    email: true
+                }
+            }
+        });
     });
 </script>
 </html>

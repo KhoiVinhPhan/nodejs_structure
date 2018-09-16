@@ -2,7 +2,7 @@
 <html>
 <% include ../../layouts/backend/header.ejs %>
 <body>
-    <form action="../update" method="post">
+    <form action="../update" method="post" id="formEditUser">
         <input type="text" hidden name="id" value="<%= user[0]['id'] %>">
         <div class="col-sm-12">
             <div class="form-group">
@@ -19,7 +19,17 @@
 </body>
 <script>
     $(document).ready(function(){
-        
+        $('#formEditUser').validate({
+            rules: {
+                txtName: {
+                    required: true,
+                },
+                txtEmail: {
+                    required: true,
+                    email: true
+                }
+            }
+        });
     });
 </script>
 </html>
